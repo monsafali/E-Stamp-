@@ -79,16 +79,12 @@ function buildPDFService(data, dataCallback, endCallback) {
           // ---- Rest of the details start here ----
           let currentY = topY;
 
-          // ----- BODY -----
-          // Manually position each field for precise alignment
-          // Labels on the left, values aligned to the right of labels
-
           // Description
           doc.font("Helvetica").fontSize(11).text("Description:", 40, currentY);
           doc
             .font("Helvetica-Bold")
             .text(data.description || "AFFIDAVIT-4", 150, currentY);
-          currentY += 20;
+          currentY += 15; // reduced spacing
 
           // Applicant
           doc.font("Helvetica").fontSize(11).text("Applicant:", 40, currentY);
@@ -99,19 +95,19 @@ function buildPDFService(data, dataCallback, endCallback) {
               150,
               currentY
             );
-          currentY += 20;
+          currentY += 15;
 
           // S/O
           doc.font("Helvetica").fontSize(11).text("S/O:", 40, currentY);
           doc
             .font("Helvetica-Bold")
             .text(data.sonOf || "MUHAMMAD LATIF", 150, currentY);
-          currentY += 20;
+          currentY += 15;
 
           // Agent
           doc.font("Helvetica").fontSize(11).text("Agent:", 40, currentY);
           doc.font("Helvetica-Bold").text(data.agent || "Self", 150, currentY);
-          currentY += 20;
+          currentY += 15;
 
           // Address
           doc.font("Helvetica").fontSize(11).text("Address:", 40, currentY);
@@ -122,14 +118,14 @@ function buildPDFService(data, dataCallback, endCallback) {
               150,
               currentY
             );
-          currentY += 20;
+          currentY += 15;
 
           // Issue Date
           doc.font("Helvetica").fontSize(11).text("Issue Date:", 40, currentY);
           doc
             .font("Helvetica-Bold")
             .text(data.issueDate || new Date().toLocaleString(), 150, currentY);
-          currentY += 20;
+          currentY += 15;
 
           // Delisted On/Validity
           doc
@@ -139,7 +135,7 @@ function buildPDFService(data, dataCallback, endCallback) {
           doc
             .font("Helvetica-Bold")
             .text(data.validity || "27-Aug-2025", 150, currentY);
-          currentY += 20;
+          currentY += 15;
 
           // Amount in Words
           doc
@@ -153,14 +149,14 @@ function buildPDFService(data, dataCallback, endCallback) {
               150,
               currentY
             );
-          currentY += 20;
+          currentY += 15;
 
           // Reason
           doc.font("Helvetica").fontSize(11).text("Reason:", 40, currentY);
           doc
             .font("Helvetica-Bold")
             .text(data.reason || "AFFIDAVIT", 150, currentY);
-          currentY += 20;
+          currentY += 15;
 
           // Vendor Information
           doc
@@ -175,7 +171,7 @@ function buildPDFService(data, dataCallback, endCallback) {
               150,
               currentY
             );
-          currentY += 40; // Space before footer
+          currentY += 25; // slightly more space at the end
 
           doc.end();
         }

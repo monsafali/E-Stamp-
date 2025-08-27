@@ -1,12 +1,3 @@
-// import React from "react";
-// import RegistrationForm from "./RegistrationForm";
-
-// const App = () => {
-//   return <RegistrationForm />;
-// };
-
-// export default App;
-
 import { useState } from "react";
 import axios from "axios";
 
